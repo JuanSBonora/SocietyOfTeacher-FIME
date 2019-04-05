@@ -1,2 +1,2 @@
 # SocietyOfTeacher-FIME
-Pagina web informativa (eventos)
+publication of events about the association
