@@ -1082,7 +1082,7 @@ textarea:focus {
     .footer-area .footer-social-info a {
       display: inline-block;
       color: #b6b6b6;
-      font-size: 13px;
+      font-size: 20px;
       margin-right: 30px; }
       .footer-area .footer-social-info a:last-child {
         margin-right: 0; }
@@ -1249,7 +1249,7 @@ textarea:focus {
   -webkit-transition-duration: 500ms;
   transition-duration: 500ms; }
   .contact-form-area .form-control:focus {
-    border-left: 3px solid #40ba37;
+    border-left: 3px solid #2ae01d;
     box-shadow: none; }
 .contact-form-area textarea.form-control {
   height: 200px;
