@@ -850,18 +850,12 @@ textarea:focus {
             &:hover,
             &:focus {
                 color: $bg-default;
+                }
             }
-        }
-        .ratings {
-            i {
-                font-size: 11px;
-                color: #fbb710;
-                display: inline-block;
-                padding: 0 1px;
-            }
+        
         }
     }
-}
+
 
 /* :: 9.0 Cta Area */
 
@@ -938,14 +932,7 @@ textarea:focus {
                 }
             }
         }
-        .ratings {
-            i {
-                font-size: 11px;
-                color: #fbb710;
-                display: inline-block;
-                padding: 0 1px;
-            }
-        }
+
         p {
             font-size: 12px;
             margin-bottom: 0;
@@ -1261,17 +1248,6 @@ textarea:focus {
                 margin-bottom: 0;
             }
         }
-    }
-}
-
-.receipe-ratings {
-    .ratings {
-        margin-bottom: 30px;
-    }
-    i {
-        font-size: 18px;
-        color: #fbb710;
-        padding: 0 3px;
     }
 }
 

@@ -690,11 +690,7 @@ textarea:focus {
       transition-duration: 500ms; }
       .single-best-receipe-area .receipe-content h5:hover, .single-best-receipe-area .receipe-content h5:focus {
         color: #40ba37; }
-    .single-best-receipe-area .receipe-content .ratings i {
-      font-size: 11px;
-      color: #fbb710;
-      display: inline-block;
-      padding: 0 1px; }
+    
 
 /* :: 9.0 Cta Area */
 .cta-area {
@@ -759,11 +755,6 @@ textarea:focus {
           font-size: 16px; } }
       .single-small-receipe-area .receipe-content a h5:hover, .single-small-receipe-area .receipe-content a h5:focus {
         color: #40ba37; }
-  .single-small-receipe-area .receipe-content .ratings i {
-    font-size: 11px;
-    color: #fbb710;
-    display: inline-block;
-    padding: 0 1px; }
   .single-small-receipe-area .receipe-content p {
     font-size: 12px;
     margin-bottom: 0;
@@ -1011,13 +1002,6 @@ textarea:focus {
     margin-bottom: 5px; }
     .receipe-headline .receipe-duration h6:last-child {
       margin-bottom: 0; }
-
-.receipe-ratings .ratings {
-  margin-bottom: 30px; }
-.receipe-ratings i {
-  font-size: 18px;
-  color: #fbb710;
-  padding: 0 3px; }
 
 .single-preparation-step {
   position: relative;
