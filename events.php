@@ -16,6 +16,7 @@
 
     <!-- Core Stylesheet -->
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/eventos.css">
 
 </head>
 
@@ -74,8 +75,8 @@
                             <!-- Nav Start -->
                             <div class="classynav">
                                 <ul>
-                                    <li class="active"><a href="index.html">Inicio</a></li>
-                                    <li><a href="events.html">Eventos</a></li>
+                                    <li><a href="index.html">Inicio</a></li>
+                                    <li class="active"><a href="events.php">Eventos</a></li>
                                     <li><a href="#">Comité</a>
                                         <div class="megamenu align-items-center">
                                             <!-- <ul class="single-mega cn-col-5">
@@ -113,7 +114,35 @@
     <!-- ##### Small Area Start ##### -->
     <section class="small-receipe-area section-padding-80-0">
         <div class="container">
+            <?php
+            $conexion = mysqli_connect("localhost", "root", "", "amfime");
+            $acentos = $conexion->query("SET NAMES 'utf8'");
+            $consulta = "SELECT * FROM eventos ORDER BY Id_evento DESC";
+            $resultado = mysqli_query($conexion,$consulta);
+            while ($row = mysqli_fetch_array($resultado)) {
+                ?>
+                <div class="row">
+                    <article>
+                        <h1 style="font-family: sans-serif"; margin-bottom:0;>
+                            <?php echo $row['Titulo_evento'];?>
+                        </h1>
+                        <p class="article-meta">
+                            <strong>Fecha:</strong> <?php echo $row['Fecha_evento']; ?>
+                            <strong>Lugar:</strong> <?php echo $row['Lugar_evento']; ?>
+                        </p>
+                        <div class="image-wrapper">
+                            <img src="data:image/jpg;base64,<?php echo base64_encode($row['Imagen_evento']); ?>">
+                        </div>
 
+                        <p class="descripcion">
+                            <?php echo $row['Descripcion_evento']; ?>
+                        </p>
+                    </article>
+                </div>
+                <hr>
+            <?php
+            }
+            ?>
         </div>
     </section>
     <!-- ##### Small Area End ##### -->

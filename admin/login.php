@@ -9,7 +9,7 @@ $resultado = mysqli_query($conexion, $consulta);
 $coincidencias = @mysqli_num_rows($resultado);
 
 if($coincidencias>0){
-    header("location:adminSide.html");
+    header("location:adminSide.php");
 }
 else{
     mysqli_free_result($resultado);
