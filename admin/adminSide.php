@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
-<?php
-include('../php/index.php');
-?>
+    <?php
+    include("../php/validarSesion.php")
+    ?>
 <head>
     <meta charset="UTF-8">
     <meta name="description" content="">
@@ -59,7 +59,7 @@ include('../php/index.php');
                     <nav class="classy-navbar justify-content-between" id="deliciousNav">
 
                         <!-- Logo -->
-                        <a class="nav-brand" href=""><img src="../img/core-img/image002.png" width="500" height="260" alt=""></a>
+                        <a class="nav-brand" href=""><img src="../img/core-img/image002.png" width="150" alt=""></a>
                          <!-- Navbar Toggler -->
                         <div class="classy-navbar-toggler">
                             <span class="navbarToggler"><span></span><span></span><span></span></span>

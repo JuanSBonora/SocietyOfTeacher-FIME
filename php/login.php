@@ -1,7 +1,7 @@
 <?php session_start();
 
 if(isset($_SESSION['usuario'])){
-    header('Location: index.php');
+    header('Location: redirect.php');
 }
 
 $errores = '';
@@ -22,33 +22,12 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     $resultado = $statement -> fetch();
     if($resultado == true){
         $_SESSION['usuario'] = $usuario;
-        header('Location: index.php');
+        header('Location: redirect.php');
     } else {
-        echo "error";
-        //$errores .= '<li>Datos incorrectos.</li>';
+        echo "<script>";
+        echo "alert('No se encontraron coincidencias, favor de volver a intentarlo.');";
+        echo "window.location= '../admin/index.php'";
+        echo "</script>";    
     }
 }
-?>
-
-<?php
-/*
-include("conexion.php");
-$usuario = $_POST['usuario'];
-$password = $_POST['password'];
-$consulta = "SELECT * FROM usuarios WHERE Usuario = '{$usuario}' AND Password='{$password}'";
-$resultado = mysqli_query($conexion, $consulta);
-
-$coincidencias = @mysqli_num_rows($resultado);
-
-if($coincidencias>0){
-    header("location:adminSide.html");
-}
-else{
-    mysqli_free_result($resultado);
-    mysqli_close($conexion);
-    echo "<script>";
-    echo "alert('No se encontraron coincidencias, favor de volver a intentarlo.');";
-    echo "window.location= 'index.html'";
-    echo "</script>";
-}*/
 ?>

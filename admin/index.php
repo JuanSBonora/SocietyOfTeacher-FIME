@@ -61,7 +61,7 @@ if(isset($_SESSION['usuario'])){
                     <nav class="classy-navbar justify-content-between" id="deliciousNav">
 
                         <!-- Logo -->
-                        <a class="nav-brand" href=""><img src="../img/core-img/image002.png" alt=""></a>
+                        <a class="nav-brand" href=""><img src="../img/core-img/image002.png" width="150" alt=""></a>
 
                     </nav>
                 </div>
