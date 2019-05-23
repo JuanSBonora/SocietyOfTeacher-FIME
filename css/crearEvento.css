@@ -1,0 +1,14 @@
+.crearEvento{
+    width: 60%;
+    margin: auto;
+}
+
+select{
+    height: 40px;
+}
+
+@media (max-width: 700px) {
+    .crearEvento{
+        width: 95%;
+    }
+}

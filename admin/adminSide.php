@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
-
+<?php
+include('../php/index.php');
+?>
 <head>
     <meta charset="UTF-8">
     <meta name="description" content="">
@@ -58,7 +60,30 @@
 
                         <!-- Logo -->
                         <a class="nav-brand" href=""><img src="../img/core-img/image002.png" width="500" height="260" alt=""></a>
-                        
+                         <!-- Navbar Toggler -->
+                        <div class="classy-navbar-toggler">
+                            <span class="navbarToggler"><span></span><span></span><span></span></span>
+                        </div>
+
+                        <!-- Menu -->
+                        <div class="classy-menu">
+
+                            <!-- close btn -->
+                            <div class="classycloseIcon">
+                                <div class="cross-wrap"><span class="top"></span><span class="bottom"></span></div>
+                            </div>
+
+                            <!-- Nav Start -->
+                            <div class="classynav">
+                                <ul>
+                                    <li class="active"><a href="">Inicio</a></li>
+                                    <li><a href="crearEvento.html">Eventos</a></li>
+                                    <li><a href="mandarCorreo.html">Correo</a></li>
+                                    <li><a href="registroMaestros.php">Registro</a></li> 
+                                </ul>
+                            </div>
+                            <!-- Nav End -->
+                        </div>
                     </nav>
                 </div>
             </div>
@@ -68,54 +93,29 @@
 
     <!-- ##### Small Area Start ##### -->
     <section class="small-receipe-area section-padding-80-0">
-        <div class="crearEvento">
-            <form action="crearEvento.php" method="POST" enctype="multipart/form-data">
-                <center><h1>Crear un evento</h1></center>
-                <div class="form-group">
-                    <label for="titulo">Titulo del evento:</label>
-                    <input type="text" class="form-control" id="titulo" placeholder="Ej. Evento del día del maestro" name="titulo">
-                </div>
-                <div class="form-row">
-                    <div class="col">
-                        <div class="form-group">
-                            <label for="lugar">Lugar:</label>
-                            <input type="text" class="form-control" id="lugar" placeholder="Ej. Sala Polivalente" name="lugar">
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="form-group">
-                            <label for="fecha">Fecha:</label>
-                            <input type="date" class="form-control" id="fecha" name="fecha">
-                        </div>
-                    </div>
-                    <div class="col">
+        <div class="jumbotron">
+            <h1 class="display-4">¡Bienvenido administrador!</h1>
+            <p class="lead">En este apartado podras modificar la información que los usuarios visualizaran en la página web.</p>
+            <hr class="my-4">
+            <h1 class="display-5">¿Qué puedo hacer como administrador?</h2>
 
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="filtro">Filtro (Hacia quien va dirigido el evento):</label>
-                    <select class="form-control" id="filtro" name="filtro">
-                        <option value="aTodos" selected>A todos</option>
-                        <option value="hombres">Hombres</option>
-                        <option value="mujeres">Mujeres</option>
-                        <option value="hijos">Maestros con hijos</option>
-                        <option value="madres">Maestras que son madres</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="Descripcion">Descripción</label>
-                    <textarea class="form-control" id="descripcion" rows="5" name="descripcion"></textarea>
-                </div>
+            <h2 class="display-6">Crear nuevos eventos</h2>
+            <p class="cuerpo">Puedes crear los eventos que aparecera en una de las pestañas principales, puedes especificar 
+                la fecha, el lugar, además de proporcionar una breve descripción y una imagen para informar a todos los maestros.</p>
+            <p class="cuerpo">Cuando decidas crear un evento se notificara a todos los maestros que hayan registrado un correo electrónico
+            valido, incluso puedes decidir a que sector notificar.</p>
 
-                <div class="form-group">
-                    <label for="imagen">Imagen</label>
-                    <input type="file" id="imagen" name="imagen">
-                </div>
+            <h2 class="display-6">Enviar correos electrónicos</h2>
+            <p class="cuerpo">Otra cosa que puedes hacer como administrador es enviar correos electrónicos para mantener actualizados,
+                a los maestros sobre las novedades dentro de la asociación.</p>
 
-                <input type="submit" type="button" class="btn btn-primary pull-right" value="Crear evento">
-            </form>
-        </div>
-        <br><br>
+            <h2 class="display-6">Editar la base de datos de maestros</h2>
+            <p class="cuerpo">Si necesitas dar de alta a un nuevo maestro para notificarlo o si necesitas eliminar a un maestro
+                de la asociación, esta es tu opción. Inclusive si necesitas actualizar la información de un maestro, desde aquí podras 
+                hacerlo.
+            </p>
+            
+          </div>
     </section>
     <!-- ##### Small Area End ##### -->
 

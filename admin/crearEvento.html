@@ -12,19 +12,19 @@
     <title>FIME - Asociacion de Maestros | Miembros</title>
 
     <!-- Favicon -->
-    <link rel="icon" href="img/core-img/fav.ico">
+    <link rel="icon" href="../img/core-img/fav.ico">
 
     <!-- Core Stylesheet -->
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="css/eventos.css">
-
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../css/login.css">
+    <link rel="stylesheet" href="../css/crearEvento.css">
 </head>
 
 <body>
     <!-- Preloader -->
     <div id="preloader">
         <i class="circle-preloader"></i>
-        <img src="img/core-img/fav.png" alt="">
+        <img src="../img/core-img/fav.png" alt="">
     </div>
 
     <!-- ##### Header Area Start ##### -->
@@ -57,9 +57,7 @@
                     <nav class="classy-navbar justify-content-between" id="deliciousNav">
 
                         <!-- Logo -->
-                        <a class="nav-brand" href="index.html"><img src="img/core-img/image002.png" width="150" alt=""></a>
-
-                        <!-- Navbar Toggler -->
+                        <a class="nav-brand" href=""><img src="../img/core-img/image002.png" width="500" height="260" alt=""></a>
                         <div class="classy-navbar-toggler">
                             <span class="navbarToggler"><span></span><span></span><span></span></span>
                         </div>
@@ -75,31 +73,10 @@
                             <!-- Nav Start -->
                             <div class="classynav">
                                 <ul>
-                                    <li><a href="index.html">Inicio</a></li>
-                                    <li class="active"><a href="events.php">Eventos</a></li>
-                                    <li><a href="#">Comité</a>
-                                        <div class="megamenu align-items-center">
-                                            <!-- <ul class="single-mega cn-col-5">
-                                            </ul> -->
-                                            <ul class="single-mega cn-col-3">
-                                                <li class="title align-items-center" class="sub-heading">Miembros</li>
-                                                <li><a href="members.html">Miembros del comité</a></li>
-                                            </ul> 
-                                            <ul class="single-mega cn-col-3">
-                                                <li class="title">Aspirantes</li>
-                                                <li><a href="#">Requisitos</a></li>
-                                                <li><a href="#">Pre-registro</a></li>
-                                            </ul>
-                                            <div class="single-mega cn-col-3">
-                                                <div class="receipe-slider owl-carousel">
-                                                    <a href="#"><img src="img/bg-img/fsw.jpg" alt=""></a>
-                                                    <a href="#"><img src="img/bg-img/Electrica.jpg" alt=""></a>
-                                                </div>
-                                            </div>
-                                            <!-- <ul class="single-mega cn-col-5"></ul> -->
-                                        </div>
-                                    </li>
-                                    <li><a href="contact.html">Contacto</a></li> 
+                                    <li><a href="adminSide.html">Inicio</a></li>
+                                    <li class="active"><a href="">Eventos</a></li>
+                                    <li><a href="mandarCorreo.html">Correo</a></li>
+                                    <li><a href="registroMaestros.php">Registro</a></li> 
                                 </ul>
                             </div>
                             <!-- Nav End -->
@@ -113,37 +90,51 @@
 
     <!-- ##### Small Area Start ##### -->
     <section class="small-receipe-area section-padding-80-0">
-        <div class="container">
-            <?php
-            include("conexion.php");
-            $acentos = $conexion->query("SET NAMES 'utf8'");
-            $consulta = "SELECT * FROM eventos ORDER BY Id_evento DESC";
-            $resultado = mysqli_query($conexion,$consulta);
-            while ($row = mysqli_fetch_array($resultado)) {
-                ?>
-                <div class="row">
-                    <article>
-                        <h1 style="font-family: sans-serif"; margin-bottom:0;>
-                            <?php echo $row['Titulo_evento'];?>
-                        </h1>
-                        <p class="article-meta">
-                            <strong>Fecha:</strong> <?php echo $row['Fecha_evento']; ?>
-                            <strong>Lugar:</strong> <?php echo $row['Lugar_evento']; ?>
-                        </p>
-                        <div class="image-wrapper">
-                            <img src="data:image/jpg;base64,<?php echo base64_encode($row['Imagen_evento']); ?>">
-                        </div>
-
-                        <p class="descripcion">
-                            <?php echo $row['Descripcion_evento']; ?>
-                        </p>
-                    </article>
+        <div class="crearEvento">
+            <form action="crearEvento.php" method="POST" enctype="multipart/form-data">
+                <center><h1>Crear un evento</h1></center>
+                <div class="form-group">
+                    <label for="titulo">Titulo del evento:</label>
+                    <input type="text" class="form-control" id="titulo" placeholder="Ej. Evento del día del maestro" name="titulo">
                 </div>
-                <hr>
-            <?php
-            }
-            ?>
+                <div class="form-row">
+                    <div class="col">
+                        <div class="form-group">
+                            <label for="lugar">Lugar:</label>
+                            <input type="text" class="form-control" id="lugar" placeholder="Ej. Sala Polivalente" name="lugar">
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="form-group">
+                            <label for="fecha">Fecha:</label>
+                            <input type="date" class="form-control" id="fecha" name="fecha">
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="filtro">Filtro (Hacia quien va dirigido el evento):</label>
+                    <select class="form-control" id="filtro" name="filtro">
+                        <option value="aTodos" selected>A todos</option>
+                        <option value="hombres">Hombres</option>
+                        <option value="mujeres">Mujeres</option>
+                        <option value="hijos">Maestros con hijos</option>
+                        <option value="madres">Maestras que son madres</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="Descripcion">Descripción</label>
+                    <textarea class="form-control" id="descripcion" rows="5" name="descripcion"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="imagen">Imagen</label>
+                    <input type="file" id="imagen" name="imagen">
+                </div>
+
+                <input type="submit" type="button" class="btn btn-success pull-right" value="Crear evento">
+            </form>
         </div>
+        <br><br>
     </section>
     <!-- ##### Small Area End ##### -->
 
@@ -156,7 +147,7 @@
                     <!-- Footer Logo -->
                     <div class="footer-logo">
                         <div>
-                            <a href="index.html"><img src="img/core-img/logo.gif" width="144" height="65" alt=""></a>
+                            <a href=""><img src="../img/core-img/logo.gif" width="144" height="65" alt=""></a>
                         </div>
                     </div>
                     <!-- Copywrite -->
@@ -171,15 +162,15 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 
     <!-- ##### All Javascript Files ##### -->
     <!-- jQuery-2.2.4 js -->
-    <script src="js/jquery/jquery-2.2.4.min.js"></script>
+    <script src="../js/jquery/jquery-2.2.4.min.js"></script>
     <!-- Popper js -->
-    <script src="js/bootstrap/popper.min.js"></script>
+    <script src="../js/bootstrap/popper.min.js"></script>
     <!-- Bootstrap js -->
-    <script src="js/bootstrap/bootstrap.min.js"></script>
+    <script src="../js/bootstrap/bootstrap.min.js"></script>
     <!-- All Plugins js -->
-    <script src="js/plugins/plugins.js"></script>
+    <script src="../js/plugins/plugins.js"></script>
     <!-- Active js -->
-    <script src="js/active.js"></script>
+    <script src="../js/active.js"></script>
 </body>
 
 </html>

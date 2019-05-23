@@ -17,6 +17,7 @@
     <!-- Core Stylesheet -->
     <link rel="stylesheet" href="../style.css">
     <link rel="stylesheet" href="../css/login.css">
+    <link rel="stylesheet" href="../css/adminSide.css">
 </head>
 
 <body>
@@ -57,7 +58,29 @@
 
                         <!-- Logo -->
                         <a class="nav-brand" href=""><img src="../img/core-img/image002.png" width="500" height="260" alt=""></a>
+                        <div class="classy-navbar-toggler">
+                            <span class="navbarToggler"><span></span><span></span><span></span></span>
+                        </div>
 
+                        <!-- Menu -->
+                        <div class="classy-menu">
+
+                            <!-- close btn -->
+                            <div class="classycloseIcon">
+                                <div class="cross-wrap"><span class="top"></span><span class="bottom"></span></div>
+                            </div>
+
+                            <!-- Nav Start -->
+                            <div class="classynav">
+                                <ul>
+                                    <li><a href="adminSide.html">Inicio</a></li>
+                                    <li><a href="crearEvento.html">Eventos</a></li>
+                                    <li><a href="mandarCorreo.html">Correo</a></li>
+                                    <li class="active"><a href="">Registro</a></li> 
+                                </ul>
+                            </div>
+                            <!-- Nav End -->
+                        </div>
                     </nav>
                 </div>
             </div>
@@ -67,17 +90,20 @@
 
     <!-- ##### Small Area Start ##### -->
     <section class="small-receipe-area section-padding-80-0">
-        <div class="container-login">
-            <div class="login-page">
-                <div class="form-login">
-                    <form class="login-form-login" action="login.php" method="POST">
-                    <input type="text" placeholder="Usuario" name="usuario"/>
-                    <input type="password" placeholder="Contraseña" name="password"/>
-                    <input type="submit" value="Ingresar" class="ingresar">
-                    </form>
-                </div>
+            <div class="jumbotron">
+                <h2 class="display-6">Lista de maestros</h2>
+                <p class="cuerpo">A continuación se muestra una lista de todos los maestros registrados hasta la fecha.</p>
+                <table>
+                    <tr>
+                        <th>Nombre completo</th>
+                        <th>Fecha de nacimiento (edad)</th>
+                        <th>Genero</th>
+                        <th>Correo electrónico</th>
+                        <th>Celular</th>
+                    </tr>
+                    <?
+                </table>
             </div>
-        </div>
     </section>
     <!-- ##### Small Area End ##### -->
 
