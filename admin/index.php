@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <?php session_start();
-if(isset($_SESSION['usuario'])){
-    
+if(isset($_SESSION['usuario'])){   
     session_destroy();
 }
 ?>

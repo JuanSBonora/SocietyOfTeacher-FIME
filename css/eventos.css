@@ -1,35 +1,11 @@
+.card-text, .text-muted{
+    color: black;
+}
 
-h1 {
-    font-family: sans-serif;
-    margin-bottom: 0;
+.contenedor-imagen{
+    margin: 2%;
 }
-article {
-    width: 90%;
-    margin-left: auto;
-    margin-right: auto;
-}
-.image-wrapper {
-    width: 250px;
-    height: 250px;
-    float: left;
-    padding-right: 25px;
-    padding-bottom: 10px;
 
-}
-.image-wrapper img {
+.card-img{
     width: 100%;
 }
-
-.article-meta {
-    font-family: sans-serif;
-    color: #aaa;
-    font-size: 12px;
-}
-.descripcion{
-    font-size: 14px;
-    color:black; 
-    text-align: justify;
-    height: 200px;
-}
-
-

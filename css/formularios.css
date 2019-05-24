@@ -1,5 +1,5 @@
-.crearEvento{
-    width: 60%;
+.crearEvento, .enviarCorreo{
+    width: 50%;
     margin: auto;
 }
 
@@ -8,7 +8,7 @@ select{
 }
 
 @media (max-width: 700px) {
-    .crearEvento{
+    .crearEvento, .enviarCorreo{
         width: 95%;
     }
 }

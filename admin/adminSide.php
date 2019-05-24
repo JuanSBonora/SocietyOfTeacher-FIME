@@ -77,8 +77,8 @@
                             <div class="classynav">
                                 <ul>
                                     <li class="active"><a href="">Inicio</a></li>
-                                    <li><a href="crearEvento.html">Eventos</a></li>
-                                    <li><a href="mandarCorreo.html">Correo</a></li>
+                                    <li><a href="crearEvento.php">Eventos</a></li>
+                                    <li><a href="mandarCorreo.php">Correo</a></li>
                                     <li><a href="registroMaestros.php">Registro</a></li> 
                                 </ul>
                             </div>

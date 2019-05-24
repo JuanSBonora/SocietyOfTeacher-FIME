@@ -21,12 +21,12 @@
 </head>
 
 <body>
-    <!-- Preloader -->
+    <!-- Preloader-->   
     <div id="preloader">
         <i class="circle-preloader"></i>
         <img src="img/core-img/fav.png" alt="">
     </div>
-
+    
     <!-- ##### Header Area Start ##### -->
     <header class="header-area">
 
@@ -77,7 +77,7 @@
                                 <ul>
                                     <li><a href="index.html">Inicio</a></li>
                                     <li class="active"><a href="events.php">Eventos</a></li>
-                                    <li><a href="#">Comité</a>
+                                    <li><a href="#">Miembros</a>
                                         <div class="megamenu align-items-center">
                                             <!-- <ul class="single-mega cn-col-5">
                                             </ul> -->
@@ -114,32 +114,33 @@
     <!-- ##### Small Area Start ##### -->
     <section class="small-receipe-area section-padding-80-0">
         <div class="container">
-            <?php
-            include("conexion.php");
-            $acentos = $conexion->query("SET NAMES 'utf8'");
-            $consulta = "SELECT * FROM eventos ORDER BY Id_evento DESC";
-            $resultado = mysqli_query($conexion,$consulta);
-            while ($row = mysqli_fetch_array($resultado)) {
-                ?>
-                <div class="row">
-                    <article>
-                        <h1 style="font-family: sans-serif"; margin-bottom:0;>
-                            <?php echo $row['Titulo_evento'];?>
-                        </h1>
-                        <p class="article-meta">
-                            <strong>Fecha:</strong> <?php echo $row['Fecha_evento']; ?>
-                            <strong>Lugar:</strong> <?php echo $row['Lugar_evento']; ?>
+        <?php
+        include("php/conexion.php");
+        $acentos = $conexion->query("SET NAMES 'utf8'");
+        $consulta = "SELECT * FROM eventos ORDER BY Id_evento DESC";
+        $resultado = mysqli_query($conexion,$consulta);
+        while ($row = mysqli_fetch_array($resultado)) {
+            ?>
+            <div class="card mb-3" style="">
+                <div class="row no-gutters">
+                    <div class="col-md-3 contenedor-imagen">
+                    <img src="data:image/jpg;base64,<?php echo base64_encode($row['Imagen_evento']); ?>" class="card-img" alt="...">
+                    </div>
+                    <div class="col-md-8">
+                    <div class="card-body">
+                        <h5 class="card-title"><?php echo $row['Titulo_evento'];?></h5>
+                        <p class="card-text">
+                            <small class="text-muted">
+                                Lugar: <?php echo $row['Lugar_evento']; ?> <br>
+                                Fecha: <?php echo $row['Fecha_evento']; ?>
+                            </small>
                         </p>
-                        <div class="image-wrapper">
-                            <img src="data:image/jpg;base64,<?php echo base64_encode($row['Imagen_evento']); ?>">
-                        </div>
-
-                        <p class="descripcion">
-                            <?php echo $row['Descripcion_evento']; ?>
-                        </p>
-                    </article>
+                        <p class="card-text"><?php echo $row['Descripcion_evento']; ?></p>
+                        
+                    </div>
+                    </div>
                 </div>
-                <hr>
+            </div>
             <?php
             }
             ?>

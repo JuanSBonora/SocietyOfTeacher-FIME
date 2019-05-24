@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
-
+<?php
+    include("../php/validarSesion.php")
+?>
 <head>
     <meta charset="UTF-8">
     <meta name="description" content="">
@@ -73,9 +75,9 @@
                             <!-- Nav Start -->
                             <div class="classynav">
                                 <ul>
-                                    <li><a href="adminSide.html">Inicio</a></li>
-                                    <li><a href="crearEvento.html">Eventos</a></li>
-                                    <li><a href="mandarCorreo.html">Correo</a></li>
+                                    <li><a href="adminSide.php">Inicio</a></li>
+                                    <li><a href="crearEvento.php">Eventos</a></li>
+                                    <li><a href="mandarCorreo.php">Correo</a></li>
                                     <li class="active"><a href="">Registro</a></li> 
                                 </ul>
                             </div>

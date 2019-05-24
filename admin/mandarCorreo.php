@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
-
+<?php
+    include("../php/validarSesion.php")
+?>
 <head>
     <meta charset="UTF-8">
     <meta name="description" content="">
@@ -17,7 +19,7 @@
     <!-- Core Stylesheet -->
     <link rel="stylesheet" href="../style.css">
     <link rel="stylesheet" href="../css/login.css">
-    <link rel="stylesheet" href="../css/adminSide.css">
+    <link rel="stylesheet" href="../css/formularios.css">
 </head>
 
 <body>
@@ -73,10 +75,10 @@
                             <!-- Nav Start -->
                             <div class="classynav">
                                 <ul>
-                                    <li><a href="adminSide.html">Inicio</a></li>
-                                    <li><a href="crearEvento.html">Eventos</a></li>
-                                    <li><a href="mandarCorreo.html">Correo</a></li>
-                                    <li class="active"><a href="">Registro</a></li> 
+                                    <li><a href="adminSide.php">Inicio</a></li>
+                                    <li><a href="crearEvento.php">Eventos</a></li>
+                                    <li class="active"><a href="">Correo</a></li>
+                                    <li><a href="registroMaestros.php">Registro</a></li> 
                                 </ul>
                             </div>
                             <!-- Nav End -->
@@ -90,20 +92,34 @@
 
     <!-- ##### Small Area Start ##### -->
     <section class="small-receipe-area section-padding-80-0">
-            <div class="jumbotron">
-                <h2 class="display-6">Lista de maestros</h2>
-                <p class="cuerpo">A continuación se muestra una lista de todos los maestros registrados hasta la fecha.</p>
-                <table>
-                    <tr>
-                        <th>Nombre completo</th>
-                        <th>Fecha de nacimiento (edad)</th>
-                        <th>Genero</th>
-                        <th>Correo electrónico</th>
-                        <th>Celular</th>
-                    </tr>
-                    <?
-                </table>
-            </div>
+    <div class="enviarCorreo">
+            <form action="../php/enviarCorreo.php" method="POST" enctype="multipart/form-data">
+                <center><h1>Enviar correo</h1></center>
+                <div class="form-group">
+                    <label for="asunto">Asunto:</label>
+                    <input type="text" class="form-control" id="asunto" placeholder="Ej. Recordatorio de renovación" name="asunto">
+                </div>
+    
+                <div class="form-group">
+                    <label for="cuerpo">Cuerpo:</label>
+                    <textarea class="form-control" id="cuerpo" rows="7" name="cuerpo"></textarea>
+                </div>
+
+                <!--<div class="form-group">
+                    <label for="filtro">Filtro (Hacia quien va dirigido el correo):</label>
+                    <select class="form-control" id="filtro" name="filtro">
+                        <option value="aTodos" selected>A todos</option>
+                        <option value="hombres">Hombres</option>
+                        <option value="mujeres">Mujeres</option>
+                        <option value="hijos">Maestros con hijos</option>
+                        <option value="madres">Maestras que son madres</option>
+                    </select>
+                </div>-->
+
+                <input type="submit" type="button" class="btn btn-success pull-right" value="Enviar correo">
+            </form>
+            <br><br>
+        </div>
     </section>
     <!-- ##### Small Area End ##### -->
 
