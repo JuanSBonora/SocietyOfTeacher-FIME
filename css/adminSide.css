@@ -19,6 +19,8 @@ table, td, tr, th {
     }
 }
 
+.editar, .eliminar{
+}
 /*
 	Max width before this PARTICULAR table gets nasty. This query will take effect for any screen smaller than 760px and also iPads specifically.
 	*/

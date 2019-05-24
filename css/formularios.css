@@ -1,4 +1,4 @@
-.crearEvento, .enviarCorreo{
+.crearEvento, .enviarCorreo, .modificar-info{
     width: 50%;
     margin: auto;
 }
@@ -8,7 +8,7 @@ select{
 }
 
 @media (max-width: 700px) {
-    .crearEvento, .enviarCorreo{
+    .crearEvento, .enviarCorreo, .modificar-info{
         width: 95%;
     }
 }
