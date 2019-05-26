@@ -89,7 +89,9 @@
         </div>
     </header>
     <!-- ##### Header Area End ##### -->
-
+    <div style="width: 85%; margin: 0 auto;">
+    <a href="index.php" class="btn btn-danger">Cerrar sesión</a> 
+    </div>
     <!-- ##### Small Area Start ##### -->
     <section class="small-receipe-area section-padding-80-0">
     <div class="enviarCorreo">

@@ -92,6 +92,9 @@
     <!-- ##### Header Area End ##### -->
 
     <!-- ##### Small Area Start ##### -->
+    <div style="width: 85%; margin: 0 auto;">
+    <a href="index.php" class="btn btn-danger">Cerrar sesión</a> 
+    </div>
     <section class="small-receipe-area section-padding-80-0">
         <div class="jumbotron">
             <h1 class="display-4">¡Bienvenido administrador!</h1>

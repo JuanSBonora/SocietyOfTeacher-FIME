@@ -87,8 +87,8 @@
                                             </ul> 
                                             <ul class="single-mega cn-col-3">
                                                 <li class="title">Aspirantes</li>
-                                                <li><a href="#">Requisitos</a></li>
-                                                <li><a href="#">Pre-registro</a></li>
+                                                <li><a href="aspirantesRequisitos.html">Requisitos</a></li>
+                                                
                                             </ul>
                                             <div class="single-mega cn-col-3">
                                                 <div class="receipe-slider owl-carousel">

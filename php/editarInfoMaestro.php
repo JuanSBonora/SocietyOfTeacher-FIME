@@ -78,9 +78,9 @@
                             <div class="classynav">
                                 <ul>
                                     <li class="active"><a href="">Inicio</a></li>
-                                    <li><a href="crearEvento.php">Eventos</a></li>
-                                    <li><a href="mandarCorreo.php">Correo</a></li>
-                                    <li><a href="registroMaestros.php">Registro</a></li> 
+                                    <li><a href="../admin/crearEvento.php">Eventos</a></li>
+                                    <li><a href="../admin/mandarCorreo.php">Correo</a></li>
+                                    <li><a href="../admin/registroMaestros.php">Registro</a></li> 
                                 </ul>
                             </div>
                             <!-- Nav End -->
@@ -91,14 +91,15 @@
         </div>
     </header>
     <!-- ##### Header Area End ##### -->
-
+    <div style="width: 85%; margin: 0 auto;">
+    <a href="../admin/index.php" class="btn btn-danger">Cerrar sesión</a> 
+    </div>
     <!-- ##### Small Area Start ##### -->
     <section class="small-receipe-area section-padding-80-0">
         <div class="modificar-info">
             <form action="../php/guardarCambios.php" method="POST">
             <?php
             $identificacion = $_POST['editar'];
-            header("Content-Type: text/html;charset=utf-8");
             include("conexion.php");
             $acentos = $conexion->query("SET NAMES 'utf8'");
             $consulta = "SELECT * FROM maestrosafiliados WHERE Id_maestro=".$identificacion;

@@ -20,6 +20,7 @@
     <link rel="stylesheet" href="../style.css">
     <link rel="stylesheet" href="../css/login.css">
     <link rel="stylesheet" href="../css/adminSide.css">
+    <link rel="stylesheet" href="../css/formularios.css">
 </head>
 <body>
     <!-- Preloader -->
@@ -88,9 +89,46 @@
         </div>
     </header>
     <!-- ##### Header Area End ##### -->
-
+    <div style="width: 85%; margin: 0 auto;">
+    <a href="index.php" class="btn btn-danger">Cerrar sesión</a> 
+    </div>
     <!-- ##### Small Area Start ##### -->
     <section class="small-receipe-area section-padding-80-0">
+            <div class="agregar-maestro">
+                <form action="../php/agregarMaestro.php" method="POST">
+                    <h1>Agregar maestro</h1>
+                    <div class="form-group">
+                        <label for="nombre">Nombre completo:</label>
+                        <input type="text" class="form-control" id="nombre" name="nombre">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="fecha">Fecha:</label>
+                        <input type="date" class="form-control" id="fecha" name="fecha">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="genero">Genero:</label>
+                        <select class="form-control" id="genero" name="genero">
+                            <option value="Hombre">Hombre</option>
+                            <option value="Mujer">Mujer</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="correo">Correo:</label>
+                        <input type="email" class="form-control" id="correo" name="correo">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="celular">Celular:</label>
+                        <input type="text" class="form-control" id="celular" name="celular">
+                    </div>
+
+                    <input type="submit" type="button" class="btn btn-success pull-right" value="Agregar maestro">
+                </form>
+                <br>
+            </div>
             <div class="jumbotron">
                 <h2 class="display-6">Lista de maestros</h2>
                 <p class="cuerpo">A continuación se muestra una lista de todos los maestros registrados hasta la fecha.</p>
