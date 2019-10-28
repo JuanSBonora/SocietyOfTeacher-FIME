@@ -9,23 +9,24 @@
     <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
     <!-- Title -->
-    <title>FIME - Asociacion de Maestros | Members</title>
+    <title>FIME - Asociacion de Maestros | Miembros</title>
 
     <!-- Favicon -->
     <link rel="icon" href="img/core-img/fav.ico">
 
     <!-- Core Stylesheet -->
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/eventos.css">
 
 </head>
 
 <body>
-    <!-- Preloader -->
+    <!-- Preloader-->   
     <div id="preloader">
         <i class="circle-preloader"></i>
         <img src="img/core-img/fav.png" alt="">
     </div>
-
+    
     <!-- ##### Header Area Start ##### -->
     <header class="header-area">
 
@@ -38,22 +39,10 @@
                         <div class="breaking-news">
                             <div id="breakingNewsTicker" class="ticker">
                                 <ul>
-                                    <li><a href="#">Blog informativo!</a></li>
                                     <li><a href="#">FACULTAD DE INGENIERIA MECANICA Y ELECTRICA</a></li>
                                     <li><a href="#">ASOCIACION DE MAESTROS</a></li>
                                 </ul>
                             </div>
-                        </div>
-                    </div>
-
-                    <!-- Top Social Info -->
-                    <div class="col-12 col-sm-6">
-                        <div class="top-social-info text-right">
-                            <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
-                            <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-                            <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-                            <a href="#"><i class="fa fa-github" aria-hidden="true"></i></a>
-                            <a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
                         </div>
                     </div>
                 </div>
@@ -68,7 +57,7 @@
                     <nav class="classy-navbar justify-content-between" id="deliciousNav">
 
                         <!-- Logo -->
-                        <a class="nav-brand" href="index.html"><img src="img/core-img/image002.png" width="500" height="260" alt=""></a>
+                        <a class="nav-brand" href="index.html"><img src="img/core-img/image002.png" width="150" alt=""></a>
 
                         <!-- Navbar Toggler -->
                         <div class="classy-navbar-toggler">
@@ -86,21 +75,20 @@
                             <!-- Nav Start -->
                             <div class="classynav">
                                 <ul>
-                                    <li class="active"><a href="index.html">Home</a></li>
-                                    <li><a href="events.html">EVENTOS</a></li>
-                                    <li><a href="#">COMITE</a>
+                                    <li><a href="index.html">Inicio</a></li>
+                                    <li class="active"><a href="events.php">Eventos</a></li>
+                                    <li><a href="#">Miembros</a>
                                         <div class="megamenu align-items-center">
                                             <!-- <ul class="single-mega cn-col-5">
                                             </ul> -->
                                             <ul class="single-mega cn-col-3">
-                                                <li class="title align-items-center" class="sub-heading">Members</li>
-                                                <li><a href="members.html">Committee Members</a></li>
-                                                <li><a href="#"></a></li>
+                                                <li class="title align-items-center" class="sub-heading">Miembros</li>
+                                                <li><a href="members.html">Miembros del comité</a></li>
                                             </ul> 
                                             <ul class="single-mega cn-col-3">
-                                                <li class="title">Aspirants</li>
-                                                <li><a href="#">Requirements</a></li>
-                                                <li><a href="#">Pre-registration</a></li>
+                                                <li class="title">Aspirantes</li>
+                                                <li><a href="aspirantesRequisitos.html">Requisitos</a></li>
+                                                
                                             </ul>
                                             <div class="single-mega cn-col-3">
                                                 <div class="receipe-slider owl-carousel">
@@ -111,13 +99,8 @@
                                             <!-- <ul class="single-mega cn-col-5"></ul> -->
                                         </div>
                                     </li>
-                                    <li><a href="contact.html">CONTACTO</a></li> 
+                                    <li><a href="contact.html">Contacto</a></li> 
                                 </ul>
-
-                                <!-- Newsletter Form -->
-                                <!-- <div class="search-btn">
-                                        <i class="fa fa-search" aria-hidden="true"></i>
-                                     </div> -->
                             </div>
                             <!-- Nav End -->
                         </div>
@@ -131,34 +114,46 @@
     <!-- ##### Small Area Start ##### -->
     <section class="small-receipe-area section-padding-80-0">
         <div class="container">
-            
-
-
-
-
+        <?php
+        include("php/conexion.php");
+        $acentos = $conexion->query("SET NAMES 'utf8'");
+        $consulta = "SELECT * FROM eventos ORDER BY Id_evento DESC";
+        $resultado = mysqli_query($conexion,$consulta);
+        while ($row = mysqli_fetch_array($resultado)) {
+            ?>
+            <div class="card mb-3" style="">
+                <div class="row no-gutters">
+                    <div class="col-md-3 contenedor-imagen">
+                    <img src="data:image/jpg;base64,<?php echo base64_encode($row['Imagen_evento']); ?>" class="card-img" alt="...">
+                    </div>
+                    <div class="col-md-8">
+                    <div class="card-body">
+                        <h5 class="card-title"><?php echo $row['Titulo_evento'];?></h5>
+                        <p class="card-text">
+                            <small class="text-muted">
+                                Lugar: <?php echo $row['Lugar_evento']; ?> <br>
+                                Fecha: <?php echo $row['Fecha_evento']; ?>
+                            </small>
+                        </p>
+                        <p class="card-text"><?php echo $row['Descripcion_evento']; ?></p>
+                        
+                    </div>
+                    </div>
+                </div>
+            </div>
+            <?php
+            }
+            ?>
         </div>
     </section>
     <!-- ##### Small Area End ##### -->
-
-    <!-- ##### Follow Us Instagram Area Start ##### -->
-    <div class="follow-us-instagram">
-        
-    </div>
-    <!-- ##### Follow Us Instagram Area End ##### -->
 
     <!-- ##### Footer Area Start ##### -->
     <footer class="footer-area">
         <div class="container h-100">
             <div class="row h-100">
                 <div class="col-12 h-100 d-flex flex-wrap align-items-center justify-content-between">
-                    <!-- Footer Social Info -->
-                    <div class="footer-social-info text-right">
-                        <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
-                        <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-                        <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-                        <a href="#"><i class="fa fa-github" aria-hidden="true"></i></a>
-                        <a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
-                    </div>
+
                     <!-- Footer Logo -->
                     <div class="footer-logo">
                         <div>

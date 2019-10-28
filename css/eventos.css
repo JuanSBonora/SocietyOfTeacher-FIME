@@ -1,0 +1,11 @@
+.card-text, .text-muted{
+    color: black;
+}
+
+.contenedor-imagen{
+    margin: 2%;
+}
+
+.card-img{
+    width: 100%;
+}

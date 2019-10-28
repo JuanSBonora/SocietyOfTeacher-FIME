@@ -1,0 +1,18 @@
+.crearEvento, .enviarCorreo, .modificar-info, .agregar-maestro{
+    width: 50%;
+    margin: auto;
+}
+
+select{
+    height: 40px;
+}
+
+@media (max-width: 700px) {
+    .crearEvento, .enviarCorreo, .modificar-info , .agregar-maestro{
+        width: 95%;
+    }
+}
+
+.agregar-maestro{
+    margin-bottom: 5%;
+}
